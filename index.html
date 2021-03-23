@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memory Game</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>  
+  <body>
+    <div id="page-container">
+      <header><!-- Color the heading --></header>
+      
+      <div id="content-wrap">
+        <h1>Memory Game</h1>
+
+        <p>
+          Welcome to the Memory Game! Your goal is to repeat the colors that light up by pressing the buttons!
+        </p>
+        
+        <div id="menuButtons">
+          <button id="startBtn" onclick="startGame()">Start</button>
+          <button id="stopBtn" onclick="stopGame()" class="hidden">Stop</button>
+          
+          <div id="buttonsDropdown" class="dropdown">
+            <button class="dropdownBtn">Buttons</button>
+            <div class="dropdown-content">
+              <a href="#" onclick="setButtonAmount(4)">4 Buttons</a>
+              <a href="#" onclick="setButtonAmount(5)">5 Buttons</a>
+              <a href="#" onclick="setButtonAmount(6)">6 Buttons</a>
+              <a href="#" onclick="setButtonAmount(7)">7 Buttons</a>
+              <a href="#" onclick="setButtonAmount(8)">8 Buttons</a>
+            </div>
+          </div>
+          
+          <div id="difficultyDropdown" class="dropdown">
+              <button id="difficultyButton" class="dropdownBtn">Difficulty</button>
+              <div class="dropdown-content">
+                <a href="#" onclick="setDifficulty('e')">Easy</a>
+                <a href="#" onclick="setDifficulty('m')">Medium</a>
+                <a href="#" onclick="setDifficulty('h')">Hard</a>
+                <a href="#" onclick="setDifficulty('d')">Dynamic</a>
+            </div>
+          </div>
+          
+          <div id="soundsDropdown" class="dropdown">
+            <button id="soundsButton" class="dropdownBtn">Sound</button>
+            <div class="dropdown-content">
+              <a href="#" onclick="setSoundTheme('melody')">Melody</a>
+              <a href="#" onclick="setSoundTheme('pokemon')">Pokemon</a>
+              <a href="#" onclick="setSoundTheme('nintendo')">Nintendo</a>
+            </div>
+          </div>
+        </div>
+        
+        <div id="gameButtonArea">
+          <div id="infoBar">
+              <div id="turnStatus" class="hidden">Wait...</div>
+            <div id="healthBar">
+              <img id="heart1" class="heart" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2F%E2%80%94Pngtree%E2%80%94love%20heart%20icon_5958163.png?v=1615948875532" alt="heart">
+              <img id="heart2" class="heart" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2F%E2%80%94Pngtree%E2%80%94love%20heart%20icon_5958163.png?v=1615948875532" alt="heart">
+              <img id="heart3" class="heart" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2F%E2%80%94Pngtree%E2%80%94love%20heart%20icon_5958163.png?v=1615948875532" alt="heart">
+            </div>
+          </div>
+          
+          <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone(1)" onmouseleave="stopTone(1)"><img id="buttonImg1" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button>
+          <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone(2)" onmouseleave="stopTone(2)"><img id="buttonImg2" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button> 
+          <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone(3)" onmouseleave="stopTone(3)"><img id="buttonImg3" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button>
+          <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone(4)" onmouseleave="stopTone(4)"><img id="buttonImg4" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button>
+          <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone(5)" onmouseleave="stopTone(5)" class="hidden"><img id="buttonImg5" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button>
+          <button id="button6" onclick="guess(6)" onmousedown="startTone(6)" onmouseup="stopTone(6)" onmouseleave="stopTone(6)" class="hidden"><img id="buttonImg6" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button>
+          <button id="button7" onclick="guess(7)" onmousedown="startTone(7)" onmouseup="stopTone(7)" onmouseleave="stopTone(7)" class="hidden"><img id="buttonImg7" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button>
+          <button id="button8" onclick="guess(8)" onmousedown="startTone(8)" onmouseup="stopTone(8)" onmouseleave="stopTone(8)" class="hidden"><img id="buttonImg8" class="gameBtnImage hidden" src="https://cdn.glitch.com/cc06d791-c5d4-45d2-a133-dc4ef737ddd2%2Fsquirtle.png?v=1616440926860"></button>
+          
+          <br>
+          <div id="timer">
+            <body onload="resetTimer()"></body>
+          </div>
+          
+        </div>
+        
+      </div>
+      <footer><!-- Color the footer --></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+/* CSS files add styling rules to your content */
+header {
+  postion: absolute;
+  background: #10cff9;
+  top: 0px;
+  width: 100vw;
+  height: 50px;
+}
+
+footer {
+  background: #10cff9;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 0px;
+  background-color: #3e484a;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 50px;
+  margin: 2em 2em 0em;
+}
+
+
+
+h1 {
+  font-family: verdana, arial, sans-serif; 
+  font-style: italic;
+  color: #10cff9;
+  text-align: center;
+}
+
+p {
+  color: #A5B6B0;
+  text-align: center;
+}
+
+#turnStatus {
+  color: red;
+  text-align: left;
+  font-family: verdana, arial, sans-serif; 
+  font-size: xx-large;
+  font-style: normal;
+  font-weight: bold;
+  
+  display: inline-block;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  float: left;
+}
+
+
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none!important;
+}
+
+#menuButtons {
+  display: block;
+  text-align: center;
+}
+
+#infoBar::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+#healthBar {
+  display: inline-block;
+  float: right;
+}
+
+.heart {
+  width:50px;
+  height:50px;
+}
+
+#gameButtonArea {
+  position: relative;
+  margin: 50px;
+  margin-top: 1vh;
+  left: 50%;
+  transform: translateX(-56%);
+  display: inline-block;  
+  text-align: center;
+}
+
+#gameButtonArea > Button {
+  width: 200px;
+  height: 200px;
+  margin: 2px;
+}
+
+#startBtn {
+  background-color: #0EF168;
+}
+
+#stopBtn {
+  background-color: #E93940;
+}
+
+#buttonsDropdown > * {
+  width: 87px;
+  color: black;
+  background-color: #10cff9;
+}
+
+#difficultyDropdown > * {
+  width: 90px;
+  color: black;
+  background-color: lightcoral;
+}
+
+#soundsDropdown > * {
+  width: 85px;
+  color: black;
+  background-color: lightyellow;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownBtn {
+  word-wrap: break-word;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  padding-botton: 10px;
+  border-radius: 10px;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  padding: 5px;
+  display: block;
+}
+
+.dropdown:hover .dropdownBtn {
+  background-color: #A5B6B0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.gameBtnImage {
+  width: 176px;
+  height: 176px;
+}
+
+#button1 {
+  background: lightgreen;
+}
+#button1:active, #button1.lit {
+  background:green;
+}
+
+#button2 {
+  background: lightblue;
+}
+#button2:active, #button2.lit {
+  background: blue;
+}
+
+#button3 {
+  background: lightcoral;
+}
+#button3:active, #button3.lit {
+  background: red;
+}
+
+#button4 {
+  background: lightyellow;
+}
+#button4:active, #button4.lit {
+  background: yellow;
+}
+
+#button5 {
+  background: #e6ac56;
+}
+#button5:active, #button5.lit {
+  background: darkorange;
+}
+
+#button6 {
+  background: plum;
+}
+#button6:active, #button6.lit {
+  background: indigo;
+}
+
+#button7 {
+  background: lightslategray;
+}
+#button7:active, #button7.lit {
+  background: #bfbfbf;
+}
+
+#button8 {
+  background: #30ffb9;
+}
+#button8:active, #button8.lit {
+  background: #007d53;;
+}
+
+#timer {
+  background-color: floralwhite;
+  border-style: solid;
+  border-width: 0.25em;
+  border-color: #10cff9;
+  
+  display: inline-block;
+  width: 3.3vw;
+  padding: 20px;
+  margin-top: 3vh;
+  
+  font-family: "Impact", "Georgia", Serif;
+  font-size: 3vmax;
+}
